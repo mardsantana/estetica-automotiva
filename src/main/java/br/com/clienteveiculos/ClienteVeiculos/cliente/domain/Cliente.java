@@ -1,5 +1,6 @@
 package br.com.clienteveiculos.ClienteVeiculos.cliente.domain;
 
+import br.com.clienteveiculos.ClienteVeiculos.application.api.ClienteRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -31,15 +32,14 @@ public class Cliente {
     private String cpf;
 
     private LocalDateTime DataHoraDoCadastro;
-
-    public Cliente(String nomeCompleto, String email, String celular, String whatsapp, Sexo sexo,
-                   String cpf, LocalDateTime DataHoraDoCadastro) {;
-        this.nomeCompleto = nomeCompleto;
-        this.email = email;
-        this.celular = celular;
-        this.whatsapp = whatsapp;
-        this.sexo = sexo;
-        this.cpf = cpf;
+    
+    public Cliente(ClienteRequest clienteRequest) {
+        this.nomeCompleto = clienteRequest.getNomeCompleto();
+        this.email = clienteRequest.getEmail();
+        this.celular = clienteRequest.getCelular();
+        this.whatsapp = clienteRequest.getWhatsapp();
+        this.sexo = clienteRequest.getSexo();
+        this.cpf = clienteRequest.getCpf();
         this.DataHoraDoCadastro = LocalDateTime.now();
     }
 }
