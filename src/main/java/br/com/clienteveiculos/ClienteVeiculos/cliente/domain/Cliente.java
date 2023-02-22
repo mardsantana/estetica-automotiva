@@ -1,16 +1,21 @@
 package br.com.clienteveiculos.ClienteVeiculos.cliente.domain;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.validator.constraints.UUID;
+import org.hibernate.validator.constraints.br.CPF;
+
 import br.com.clienteveiculos.ClienteVeiculos.application.api.ClienteRequest;
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.UUID;
-import org.hibernate.validator.constraints.br.CPF;
-
-import java.time.LocalDateTime;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
@@ -25,7 +30,9 @@ public class Cliente {
     @NotBlank
     @Email
     private String email;
+    @NotBlank
     private String celular;
+    @NotBlank
     private String whatsapp;
     private Sexo sexo;
     @CPF
