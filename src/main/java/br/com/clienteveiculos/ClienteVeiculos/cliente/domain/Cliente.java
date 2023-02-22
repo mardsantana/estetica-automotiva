@@ -1,8 +1,7 @@
 package br.com.clienteveiculos.ClienteVeiculos.cliente.domain;
 
 import br.com.clienteveiculos.ClienteVeiculos.application.api.ClienteRequest;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -15,8 +14,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 @Entity
-public class Cliente<IdCliente> {
+public class Cliente {
    @Id
+   @GeneratedValue(strategy = GenerationType.AUTO)
+   @Column(name = "idCliente", updatable = false, unique = true, nullable = false)
     private UUID idCliente;
     @NotBlank
     private String nomeCompleto;
