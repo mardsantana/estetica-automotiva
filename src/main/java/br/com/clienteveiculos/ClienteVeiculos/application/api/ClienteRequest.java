@@ -4,7 +4,7 @@ import br.com.clienteveiculos.ClienteVeiculos.cliente.domain.Sexo;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Value;
-import org.hibernate.validator.constraints.br.CPF;
+
 
 @Value
 public class ClienteRequest {
@@ -16,6 +16,5 @@ public class ClienteRequest {
     private String celular;
     private String whatsapp;
     private Sexo sexo;
-    @CPF
     private String cpf;
 }
