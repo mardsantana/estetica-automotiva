@@ -32,8 +32,6 @@ public class Cliente {
     private String cpf;
 
     private LocalDateTime DataHoraDoCadastro;
-
-
     public Cliente(ClienteRequest clienteRequest) {
         this.nomeCompleto = clienteRequest.getNomeCompleto();
         this.email = clienteRequest.getEmail();
