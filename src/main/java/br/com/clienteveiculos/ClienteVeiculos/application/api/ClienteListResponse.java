@@ -17,6 +17,8 @@ public class ClienteListResponse {
     private String celular;
     private String whatsapp;
 
+
+
     public static List<ClienteListResponse> converte(List<Cliente> clientes) {
         return clientes.stream()
                 .map(ClienteListResponse::new)

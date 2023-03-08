@@ -31,7 +31,7 @@ public class Cliente {
     @CPF
     private String cpf;
 
-    private LocalDateTime DataHoraDoCadastro;
+    private LocalDateTime dataHoraDoCadastro;
     public Cliente(ClienteRequest clienteRequest) {
         this.nomeCompleto = clienteRequest.getNomeCompleto();
         this.email = clienteRequest.getEmail();
@@ -39,7 +39,7 @@ public class Cliente {
         this.whatsapp = clienteRequest.getWhatsapp();
         this.sexo = clienteRequest.getSexo();
         this.cpf = clienteRequest.getCpf();
-        this.DataHoraDoCadastro = LocalDateTime.now();
+        this.dataHoraDoCadastro = LocalDateTime.now();
     }
 }
 
