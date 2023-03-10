@@ -1,9 +1,6 @@
 package br.com.clienteveiculos.ClienteVeiculos.application.service;
 
-import br.com.clienteveiculos.ClienteVeiculos.application.api.ClienteDetalhadoResponse;
-import br.com.clienteveiculos.ClienteVeiculos.application.api.ClienteListResponse;
-import br.com.clienteveiculos.ClienteVeiculos.application.api.ClienteRequest;
-import br.com.clienteveiculos.ClienteVeiculos.application.api.ClienteResponse;
+import br.com.clienteveiculos.ClienteVeiculos.application.api.*;
 import br.com.clienteveiculos.ClienteVeiculos.application.repository.ClienteRepository;
 import br.com.clienteveiculos.ClienteVeiculos.cliente.domain.Cliente;
 import lombok.RequiredArgsConstructor;
@@ -48,5 +45,14 @@ public class ClienteApplicationService implements ClienteService{
         Cliente cliente = clienteRepository.buscaClienteAtravesId(idCliente);
         clienteRepository.deletaCliente(cliente);
         log.info("[finaliza] ClienteApplicationService - deletaClienteAtravesId");
+    }
+
+    @Override
+    public void patchAlteraCliente(UUID idCliente, ClienteAlteracaoRequest clienteAlteracaoRequest) {
+        log.info("[inicia] ClienteApplicationService - patchAlteraCliente");
+        Cliente cliente = clienteRepository.buscaClienteAtravesId(idCliente);
+        cliente.altera(clienteAlteracaoRequest);
+        clienteRepository.salva(cliente);
+        log.info("[finaliza] ClienteApplicationService - patchAlteraCliente");
     }
 }

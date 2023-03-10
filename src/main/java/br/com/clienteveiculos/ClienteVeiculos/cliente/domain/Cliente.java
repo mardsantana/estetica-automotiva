@@ -1,5 +1,6 @@
 package br.com.clienteveiculos.ClienteVeiculos.cliente.domain;
 
+import br.com.clienteveiculos.ClienteVeiculos.application.api.ClienteAlteracaoRequest;
 import br.com.clienteveiculos.ClienteVeiculos.application.api.ClienteRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -43,6 +44,14 @@ public class Cliente {
         this.whatsapp = clienteRequest.getWhatsapp();
         this.sexo = clienteRequest.getSexo();
         this.cpf = clienteRequest.getCpf();
+        this.dataHoraDoCadastro = LocalDateTime.now();
+    }
+
+    public void altera(ClienteAlteracaoRequest clienteRequest) {
+        this.nomeCompleto = clienteRequest.getNomeCompleto();
+        this.celular = clienteRequest.getCelular();
+        this.whatsapp = clienteRequest.getWhatsapp();
+        this.sexo = clienteRequest.getSexo();
         this.dataHoraDoCadastro = LocalDateTime.now();
     }
 }
