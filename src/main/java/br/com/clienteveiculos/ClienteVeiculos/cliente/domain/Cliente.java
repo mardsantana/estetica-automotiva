@@ -2,6 +2,7 @@ package br.com.clienteveiculos.ClienteVeiculos.cliente.domain;
 
 import br.com.clienteveiculos.ClienteVeiculos.application.api.ClienteRequest;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -22,6 +23,8 @@ public class Cliente {
     @NotBlank
     private String nomeCompleto;
     @NotBlank
+    @Email
+    @Column(unique = true)
     private String email;
     @NotBlank
     private String celular;
@@ -29,6 +32,7 @@ public class Cliente {
     private String whatsapp;
     private Sexo sexo;
     @CPF
+    @Column(unique = true)
     private String cpf;
 
     private LocalDateTime dataHoraDoCadastro;
