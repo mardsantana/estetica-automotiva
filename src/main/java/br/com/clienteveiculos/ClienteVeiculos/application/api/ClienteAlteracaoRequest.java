@@ -1,22 +1,16 @@
 package br.com.clienteveiculos.ClienteVeiculos.application.api;
 
 import br.com.clienteveiculos.ClienteVeiculos.cliente.domain.Sexo;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Value;
-import org.hibernate.validator.constraints.br.CPF;
 
 
 @Value
-public class ClienteRequest {
+public class ClienteAlteracaoRequest {
     @NotBlank
     private String nomeCompleto;
     @NotBlank
-    @Email
-    private String email;
     private String celular;
     private String whatsapp;
     private Sexo sexo;
-    @CPF
-    private String cpf;
 }
