@@ -22,24 +22,6 @@ public class Veiculo {
     private String placa;
     @Enumerated(EnumType.STRING)
     private Cor cor;
-//    private LocalDateTime dataHoraDoCadastro;
-//    public Veiculo(ClienteRequest clienteRequest) {
-//        this.nomeCompleto = clienteRequest.getNomeCompleto();
-//        this.email = clienteRequest.getEmail();
-//        this.celular = clienteRequest.getCelular();
-//        this.whatsapp = clienteRequest.getWhatsapp();
-//        this.sexo = clienteRequest.getSexo();
-//        this.cpf = clienteRequest.getCpf();
-//        this.dataHoraDoCadastro = LocalDateTime.now();
-//    }
-//
-//    public void altera(ClienteAlteracaoRequest clienteRequest) {
-//        this.nomeCompleto = clienteRequest.getNomeCompleto();
-//        this.celular = clienteRequest.getCelular();
-//        this.whatsapp = clienteRequest.getWhatsapp();
-//        this.sexo = clienteRequest.getSexo();
-//        this.dataHoraDoCadastro = LocalDateTime.now();
-//    }
 }
 
 
