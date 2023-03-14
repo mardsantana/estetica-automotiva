@@ -1,4 +1,4 @@
-package br.com.clienteveiculos.ClienteVeiculos.veiculos.domain;
+package br.com.clienteveiculos.ClienteVeiculos.veiculos.application.api;
 
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -12,6 +12,6 @@ public interface VeiculoAPI {
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     VeiculoResponse postVeiculo(@PathVariable UUID idCliente,
-            @Valid @RequestBody VeiculoRequest veiculoRequest);
+                                @Valid @RequestBody VeiculoRequest veiculoRequest);
 
 }

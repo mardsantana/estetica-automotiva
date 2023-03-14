@@ -1,4 +1,4 @@
-package br.com.clienteveiculos.ClienteVeiculos.veiculos.domain;
+package br.com.clienteveiculos.ClienteVeiculos.veiculos.application.api;
 
 import lombok.Value;
 import org.hibernate.validator.constraints.UUID;

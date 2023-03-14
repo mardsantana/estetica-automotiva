@@ -1,7 +1,7 @@
 package br.com.clienteveiculos.ClienteVeiculos.veiculos.service;
 
-import br.com.clienteveiculos.ClienteVeiculos.veiculos.domain.VeiculoRequest;
-import br.com.clienteveiculos.ClienteVeiculos.veiculos.domain.VeiculoResponse;
+import br.com.clienteveiculos.ClienteVeiculos.veiculos.application.api.VeiculoRequest;
+import br.com.clienteveiculos.ClienteVeiculos.veiculos.application.api.VeiculoResponse;
 
 import java.util.UUID;
 

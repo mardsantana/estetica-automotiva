@@ -1,5 +1,6 @@
-package br.com.clienteveiculos.ClienteVeiculos.veiculos.domain;
+package br.com.clienteveiculos.ClienteVeiculos.veiculos.application.api;
 
+import br.com.clienteveiculos.ClienteVeiculos.veiculos.domain.Cor;
 import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

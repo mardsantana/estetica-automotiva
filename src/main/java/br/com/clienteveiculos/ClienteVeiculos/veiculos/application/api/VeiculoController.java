@@ -1,4 +1,4 @@
-package br.com.clienteveiculos.ClienteVeiculos.veiculos.domain;
+package br.com.clienteveiculos.ClienteVeiculos.veiculos.application.api;
 
 import br.com.clienteveiculos.ClienteVeiculos.veiculos.service.VeiculoService;
 import lombok.RequiredArgsConstructor;
@@ -10,7 +10,7 @@ import java.util.UUID;
 @RestController
 @Log4j2
 @RequiredArgsConstructor
-public class VeiculoController implements VeiculoAPI{
+public class VeiculoController implements VeiculoAPI {
     private final VeiculoService veiculoService;
     @Override
     public VeiculoResponse postVeiculo(UUID idCliente, VeiculoRequest veiculoRequest) {
