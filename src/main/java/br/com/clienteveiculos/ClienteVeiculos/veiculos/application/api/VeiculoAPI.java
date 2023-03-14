@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -13,5 +14,9 @@ public interface VeiculoAPI {
     @ResponseStatus(code = HttpStatus.CREATED)
     VeiculoResponse postVeiculo(@PathVariable UUID idCliente,
                                 @Valid @RequestBody VeiculoRequest veiculoRequest);
+
+    @GetMapping
+    @ResponseStatus(code = HttpStatus.OK)
+    List<VeiculoClienteListResponse> getVeiculoClienteId(@PathVariable UUID idCliente);
 
 }
