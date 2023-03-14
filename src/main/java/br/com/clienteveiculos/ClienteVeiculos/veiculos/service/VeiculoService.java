@@ -9,5 +9,5 @@ import java.util.UUID;
 
 public interface VeiculoService {
     VeiculoResponse CriaVeiculo(UUID idCliente, VeiculoRequest veiculoRequest);
-    List<VeiculoClienteListResponse> buscaVeiculosDoCleinteID(UUID idCliente);
+    List<VeiculoClienteListResponse> buscaVeiculosDoClienteID(UUID idCliente);
 }

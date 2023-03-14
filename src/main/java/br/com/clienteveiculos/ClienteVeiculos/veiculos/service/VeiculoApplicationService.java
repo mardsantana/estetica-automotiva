@@ -28,10 +28,11 @@ public class VeiculoApplicationService implements VeiculoService{
         return new VeiculoResponse(veiculo.getIdVeiculo());
     }
     @Override
-    public List<VeiculoClienteListResponse> buscaVeiculosDoCleinteID(UUID idCliente) {
-        log.info("[start] VeiculoApplicationService - buscaVeiculosDoCleinteID");
+    public List<VeiculoClienteListResponse> buscaVeiculosDoClienteID(UUID idCliente) {
+        log.info("[start] VeiculoApplicationService - buscaVeiculosDoClienteID");
         clienteService.buscaClienteAtravesId(idCliente);
-        log.info("[finish] VeiculoApplicationService - buscaVeiculosDoCleinteID");
-        return null;
+        List<Veiculo> veiculosDoCliente = veiculoRepository.buscaVeiculosDoClienteID(idCliente);
+        log.info("[finish] VeiculoApplicationService - buscaVeiculosDoClienteID");
+        return VeiculoClienteListResponse.converte(veiculosDoCliente);
     }
 }
