@@ -9,7 +9,7 @@ import java.util.UUID;
 @Log4j2
 public class VeiculoController implements VeiculoAPI{
     @Override
-    public veiculoResponse postVeiculo(UUID idCliente, VeiculoRequest veiculoRequest) {
+    public VeiculoResponse postVeiculo(UUID idCliente, VeiculoRequest veiculoRequest) {
         log.info("[inicia] VeiculoController - postVeiculo");
         log.info("[idCliente] {}", idCliente);
         log.info("[finaliza] VeiculoController - postVeiculo");

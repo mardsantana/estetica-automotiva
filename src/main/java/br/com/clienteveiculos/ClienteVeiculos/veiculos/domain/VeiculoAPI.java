@@ -11,7 +11,7 @@ import java.util.UUID;
 public interface VeiculoAPI {
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    veiculoResponse postVeiculo(@PathVariable UUID idCliente,
+    VeiculoResponse postVeiculo(@PathVariable UUID idCliente,
             @Valid @RequestBody VeiculoRequest veiculoRequest);
 
 }
