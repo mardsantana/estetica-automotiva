@@ -21,12 +21,12 @@ public class VeiculoController implements VeiculoAPI {
         log.info("[finaliza] VeiculoController - postVeiculo");
         return  veiculo;
     }
-
     @Override
     public List<VeiculoClienteListResponse> getVeiculoClienteId(UUID idCliente) {
         log.info("[inicia] VeiculoController - getVeiculoClienteId");
         log.info("[idCliente]{}", idCliente);
+        List<VeiculoClienteListResponse> veiculosDoCliente = veiculoService.buscaVeiculosDoCleinteID(idCliente);
         log.info("[finaliza] VeiculoController - getVeiculoClienteId");
-        return null;
+        return veiculosDoCliente;
     }
 }

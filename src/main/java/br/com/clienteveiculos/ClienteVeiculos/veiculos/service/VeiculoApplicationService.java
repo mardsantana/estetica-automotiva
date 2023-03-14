@@ -1,6 +1,7 @@
 package br.com.clienteveiculos.ClienteVeiculos.veiculos.service;
 
 import br.com.clienteveiculos.ClienteVeiculos.application.service.ClienteService;
+import br.com.clienteveiculos.ClienteVeiculos.veiculos.application.api.VeiculoClienteListResponse;
 import br.com.clienteveiculos.ClienteVeiculos.veiculos.domain.Veiculo;
 import br.com.clienteveiculos.ClienteVeiculos.veiculos.application.api.VeiculoRequest;
 import br.com.clienteveiculos.ClienteVeiculos.veiculos.application.api.VeiculoResponse;
@@ -9,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -24,5 +26,12 @@ public class VeiculoApplicationService implements VeiculoService{
         Veiculo veiculo = veiculoRepository.salvaVeiculo(new Veiculo(idCliente, veiculoRequest));
         log.info("[finish] VeiculoApplicationService - CriaVeiculo");
         return new VeiculoResponse(veiculo.getIdVeiculo());
+    }
+    @Override
+    public List<VeiculoClienteListResponse> buscaVeiculosDoCleinteID(UUID idCliente) {
+        log.info("[start] VeiculoApplicationService - buscaVeiculosDoCleinteID");
+        clienteService.buscaClienteAtravesId(idCliente);
+        log.info("[finish] VeiculoApplicationService - buscaVeiculosDoCleinteID");
+        return null;
     }
 }
