@@ -24,7 +24,8 @@ public class VeiculoInfraRepository implements VeiculoRepository {
     @Override
     public List<Veiculo> buscaVeiculosDoClienteID(UUID idCliente) {
         log.info("[start] VeiculoInfraRepository - buscaVeiculosDoClienteID");
+        var veiculos = veiculoSpringDataJPARepository.findByIdClienteProrprietario(idCliente);
         log.info("[finish] VeiculoInfraRepository - buscaVeiculosDoClienteID");
-        return null;
+        return veiculos;
     }
 }
