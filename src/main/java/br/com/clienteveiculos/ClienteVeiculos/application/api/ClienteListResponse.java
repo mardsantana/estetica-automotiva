@@ -1,9 +1,9 @@
 package br.com.clienteveiculos.ClienteVeiculos.application.api;
 
 import br.com.clienteveiculos.ClienteVeiculos.cliente.domain.Cliente;
+import jakarta.validation.constraints.NotNull;
 import lombok.Value;
 import org.hibernate.validator.constraints.UUID;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.stream.Collectors;
